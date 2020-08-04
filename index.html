@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="favicon.ico?" />
+    <script src="https://kit.fontawesome.com/14783a8e59.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="./style.css">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,300" rel="stylesheet" type="text/css">
+    <script src="lights.js"></script>
+    <title>Bulbz</title>
+</head>
+
+<body>
+    <div id="page-container">
+        <header class="img-container">
+            <img class="bulb-img" src="bulbz.png">
+            <i class="random-color-icon fas fa-palette"></i>
+        </header>
+        <div class="main">
+            <div id="lights-container">
+                <div id="bulb-1" class="circle light-1 bulb-1">
+                    <div class="btn-util" onclick="openColorModal(event)">EDIT</div>
+                    <div class="btn-util" onclick="removeBulb(event)">REMOVE</div>
+                </div>
+                <div id="bulb-2" class="circle light-1 bulb-2">
+                    <div class="btn-util" onclick="openColorModal(event)">EDIT</div>
+                    <div class="btn-util" onclick="removeBulb(event)">REMOVE</div>
+                </div>
+                <div id="bulb-3" class="circle light-1 bulb-3">
+                    <div class="btn-util" onclick="openColorModal(event)">EDIT</div>
+                    <div class="btn-util" onclick="removeBulb(event)">REMOVE</div>
+                </div>
+                <div id="bulb-4" class="circle light-1 bulb-4">
+                    <div class="btn-util" onclick="openColorModal(event)">EDIT</div>
+                    <div class="btn-util" onclick="removeBulb(event)">REMOVE</div>
+                </div>
+                <div id="bulb-5" class="circle light-1 bulb-5">
+                    <div class="btn-util" onclick="openColorModal(event)">EDIT</div>
+                    <div class="btn-util" onclick="removeBulb(event)">REMOVE</div>
+                </div>
+            </div>
+            <div class="btn-container">
+                <button onclick="lightsOn()" type="button" id="lights-on" class="btn-start">START</button>
+                <button onclick="addBulb()" type="button" id="add-bulb" class="btn-add">ADD</button>
+            </div>
+            <div class="info">CLICK ON 'START' TO SEE THE MAGIC. <br> WHILE THE LIGHTSHOW IS PAUSED, CLICK ON A BULB AND
+                CHOOSE A NEW COLOR OR SIZE IN THE WINDOW.
+                YOU CAN ALSO REMOVE ANY BULB YOU WANT TO.
+                <br /> START THE SHOW AGAIN AND ENJOY. </div>
+        </div>
+        <footer>
+            <div class="footer-text">
+                By Carla Naujoks
+            </div>
+        </footer>
+    </div>
+    <div id="modal-edit">
+        <div class="modal-container">
+            <div class="close-col" onclick="closeColorModal()" class="btn-close"><i
+                    class="btn-close far fa-times-circle"></i>
+            </div>
+            <div class="opt-col color-col">
+                <div>COLOR:</div>
+                <table class="color-opt">
+                    <tbody>
+                        <tr class="color-table">
+                            <td onclick="chooseNewColor(event)" class="bulb-1"></td>
+                            <td onclick="chooseNewColor(event)" class="bulb-2"></td>
+                            <td onclick="chooseNewColor(event)" class="bulb-3"></td>
+                            <td onclick="chooseNewColor(event)" class="bulb-4"></td>
+                            <td onclick="chooseNewColor(event)" class="bulb-5"></td>
+                        </tr>
+                        <tr class="color-table">
+                            <td onclick="chooseNewColor(event)" class="bulb-6"></td>
+                            <td onclick="chooseNewColor(event)" class="bulb-7"></td>
+                            <td onclick="chooseNewColor(event)" class="bulb-8"></td>
+                            <td onclick="chooseNewColor(event)" class="bulb-9"></td>
+                            <td onclick="chooseNewColor(event)" class="bulb-10"></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="opt-col size-opt">
+                <div>SIZE:</div>
+                <div class="size-col">
+                    <div class="size-select">
+                        <div>
+                            <input type="checkbox" id="light-3" class="size-check" onclick="chooseNewSize(this.id)">
+                            <label for="size-small" class="size-label">SMALL</label>
+                        </div>
+                        <div> <input type="checkbox" id="light-2" class="size-check" onclick="chooseNewSize(this.id)">
+                            <label for="size-medium" class="size-label">MEDIUM</label>
+                        </div>
+                        <div> <input type="checkbox" id="light-1" class="size-check" onclick="chooseNewSize(this.id)">
+                            <label for="size-big" class="size-label">LARGE</label>
+                        </div>
+                    </div>
+                    <div id="edit-bulb" class="circle"></div>
+                </div>
+            </div>
+            <button onclick="changeColorModal()" class="btn-change" type="button">NEW</button>
+        </div>
+
+    </div>
+</body>
+
+</html>
